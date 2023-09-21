@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Examen Semana 4</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Correo</th>
+            <th>password</th>
+            <th>pais</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tienda in Model.Data)
+        {
+            foreach (var x in tienda.clientes)
+            {
+                <tr>
+                    <td>@x._id</td>
+                    <td>@x.correo</td>
+                    <td>@x.password</td>
+                    <td>@x.pais</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
